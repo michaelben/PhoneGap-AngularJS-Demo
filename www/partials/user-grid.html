@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div >
+        <big><b>Photo App</b></big><br>
+      Choose User: <h3><input placeholder="type to filter" ng-model="query"></h3>
+    </div>
+    <div >
+      <table >
+        <tr ng-repeat="userrow in users | filter:query | tablearray" class="tablerow">
+        <td ng-repeat="user in userrow" class="tablecell">
+            <input class="btn" type="button" value={{user.name}} ng-click="onUserClick($event)">
+        </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
